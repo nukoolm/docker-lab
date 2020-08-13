@@ -1,2 +1,2 @@
 FROM alpine
-CMD ["echo", "hello"]
+CMD ["echo", "hello $MY_WORD"]
