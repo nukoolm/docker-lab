@@ -1,2 +1,4 @@
 FROM alpine
-CMD ["echo", "hello $MY_WORD"]
+env WORD
+RUN echo $MY_WORD
+CMD ["echo", "hello $WORD"]
