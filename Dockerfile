@@ -1,4 +1,4 @@
-FROM docker pull node
+FROM node
 
 MAINTAINER Nukool Muangsoon (nukoolmuangsoon@gmail.com) 
 LABEL Description="NodeJS-Sample-app Build Container"
