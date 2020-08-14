@@ -1,4 +1,4 @@
 FROM alpine
-env WORD nukoolmu
+env WORD nukoolm
 RUN echo $MY_WORD
 CMD ["echo", "hello $WORD"]
