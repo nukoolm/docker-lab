@@ -1,2 +1,2 @@
-# docker-lab
-for workshop
+# Hack me if you can
+

@@ -1,0 +1,27 @@
+1. The Correct Answer is 'A'
++A. This is me
+B. This is me
+C. This is me
+D. This is me
+
+2. The Correct Answer is 'C'
+A. This is me
+B. This is me
++C. This is me
+D. This is me
+
+3. The Correct Answer is 'B'
+A. This is me
++B. This is me
+C. This is me
+D. This is me
+
+4. Do you understand concept
++A. yes
+B. No
+
+5. The wrong Answer is 'D'
++A. This is me
++B. This is me
++C. This is me
+D. This is me

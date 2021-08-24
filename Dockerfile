@@ -1,12 +1,13 @@
-FROM node
-
-MAINTAINER Nukool Muangsoon (nukoolmuangsoon@gmail.com) 
-LABEL Description="NodeJS-Sample-app Build Container"
+FROM bash
 
 WORKDIR /app
+
+RUN chmod 711 /app
+
 ADD . .
 
-RUN npm install
-EXPOSE 3000
+ENTRYPOINT ["bash","run.sh"]
 
-CMD ["node", "app.js"]
+RUN adduser -H -D student -s /sbin/nologin
+
+USER student
