@@ -349,6 +349,7 @@
                 <host name="default-host" alias="localhost">
                     <location name="/" handler="welcome-content"/>
                     <location name="/backend" handler="myproxy"/>
+                    <location name="/frontend" handler="myfrontend"/>
                     <filter-ref name="server-header"/>
                     <filter-ref name="x-powered-by-header"/>
                 </host>
@@ -359,8 +360,12 @@
             </servlet-container>
 	    <handlers>
 		  <reverse-proxy name="myproxy">
-			<host name="mypython" instance-id="myRoute" path="/backend" outbound-socket-binding="http-remote"/>
-		  </reverse-proxy>
+			<host name="mypython" instance-id="myRoute" path="/backend" outbound-socket-binding="http-backend"/>
+		</reverse-proxy>
+
+		<reverse-proxy name="myfrontend">
+			<host name="localhost" path="/" outbound-socket-binding="http-frontend" />
+		</reverse-proxy>
                 <file name="welcome-content" path="${jboss.home.dir}/welcome-content"/>
             </handlers>
             <filters>
@@ -408,8 +413,11 @@
             <remote-destination host="localhost" port="25"/>
     </outbound-socket-binding>
 
-    <outbound-socket-binding name="http-remote">
-	    <remote-destination host="localhost" port="80"/>
+    <outbound-socket-binding name="http-frontend">
+	    <remote-destination host="localhost" port="8080"/>
+    </outbound-socket-binding>
+    <outbound-socket-binding name="http-backend">
+	    <remote-destination host="mypython" port="80"/>
     </outbound-socket-binding>
     </socket-binding-group>
 </server>
