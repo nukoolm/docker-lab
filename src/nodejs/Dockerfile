@@ -6,7 +6,7 @@ LABEL Description="NodeJS-Sample-app Build Container"
 WORKDIR /app
 ADD . .
 
-RUN npm install
+RUN npm install express
 EXPOSE 3000
 
 CMD ["node", "app.js"]
